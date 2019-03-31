@@ -24,6 +24,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HandsUp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="36sp"
+            android:textStyle="bold|italic" />
+
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
@@ -65,5 +75,6 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
             android:textStyle="bold" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
