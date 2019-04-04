@@ -8,7 +8,6 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -16,7 +15,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:background="@mipmap/ic_launcher_round"
+        android:background="@color/colorTextHint"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="HandsUp"
             android:textAllCaps="false"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/colorPrimary"
             android:textSize="36sp"
             android:textStyle="bold|italic" />
 
@@ -41,7 +40,7 @@
             android:ems="10"
             android:hint="User-ID"
             android:inputType="textPersonName"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorBackground"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 
@@ -75,6 +74,16 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Create New Account"
+            android:textColor="@color/colorText"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
 
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
