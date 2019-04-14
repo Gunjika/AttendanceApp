@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".forgot_pass">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -24,62 +24,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HandsUp"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:textSize="36sp"
-            android:textStyle="bold|italic" />
-
         <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
+            android:id="@+id/editText9"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="User-ID"
             android:inputType="textPersonName"
-            android:textColor="@color/colorBackground"
+            android:text="User-ID"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 
         <EditText
-            android:id="@+id/editText2"
-            android:layout_width="wrap_content"
+            android:id="@+id/editText11"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Password"
-            android:inputType="textPassword"
-            android:textColor="@color/colorBackground"
+            android:inputType="textPersonName"
+            android:text="Email"
             android:textSize="24sp"
             android:textStyle="bold|italic" />
 
-        <CheckBox
-            android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forget Password?"
-            android:textColor="@color/colorText"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LogIn"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SignUp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
+            android:text="Confirm"
+            android:textSize="24sp" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

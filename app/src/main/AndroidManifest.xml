@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".new_account"></activity>
+        <activity android:name=".Wifi_activity"></activity>
+        <activity android:name=".Confirm" />
+        <activity android:name=".forgot_pass" />
+        <activity android:name=".new_account" />
         <activity android:name=".thirdActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".MainActivity">
