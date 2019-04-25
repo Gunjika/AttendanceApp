@@ -9,10 +9,15 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
     TextView textEmail,textPass;
     Button button,button1;
     CheckBox checkBox;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         button=findViewById(R.id.button);
         button1=findViewById(R.id.button6);
         checkBox=findViewById(R.id.checkBox);
+        FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

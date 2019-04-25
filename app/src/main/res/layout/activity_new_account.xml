@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="User-Id"
             android:inputType="textPersonName"
             android:textStyle="bold|italic" />
 
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="61dp"
             android:ems="10"
-            android:hint="Email"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:textStyle="bold|italic" />
 
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="63dp"
             android:ems="10"
-            android:hint="Password"
+            android:hint="Email"
             android:inputType="textPassword"
             android:textStyle="bold|italic" />
 
@@ -65,9 +65,18 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:hint="Confirm Password"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textStyle="bold|italic" />
+
+        <EditText
+            android:id="@+id/editText10"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:ems="10"
+            android:hint="Confirm Password"
+            android:inputType="textPersonName"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/button9"
@@ -78,13 +87,14 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
+        <CheckBox
+            android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Already Hvae Account?Login"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:text="Already Have Account?Login"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

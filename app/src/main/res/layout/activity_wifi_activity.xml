@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
-            android:layout_height="172dp"
+            android:layout_height="107dp"
             android:text="Connection Status"
             android:textColor="@color/colorBackground"
             android:textSize="36sp" />
@@ -38,16 +38,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Wi-fi on "
                 android:textSize="18sp" />
 
-            <Button
-                android:id="@+id/button11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Wi-fi Off"
-                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
