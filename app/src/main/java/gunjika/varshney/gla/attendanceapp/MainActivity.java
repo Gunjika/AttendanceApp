@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -16,9 +16,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     TextView textEmail,textPass;
     Button button,button1;
     CheckBox checkBox;
@@ -36,60 +35,55 @@ public class MainActivity extends AppCompatActivity {
         checkBox=findViewById(R.id.checkBox);
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String c1=textEmail.getText().toString().trim();
-                String c2=textPass.getText().toString().trim();
-                if (c1.equals("")||c2.equals(""))
-                {
-                    Toast.makeText(MainActivity.this, "fill the entries", Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    mAuth.signInWithEmailAndPassword(c1, c2)
-                            .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information;
-                                        Toast.makeText(MainActivity.this, "login successful", Toast.LENGTH_SHORT).show();
-                                        Intent logIntent=new Intent(MainActivity.this,SecondActivity.class);
-                                        startActivity(logIntent);
-                                    }
-                                    else {
-                                        // If sign in fails, display a message to the user.
-                                        //Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                        Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                        updateUI(null);
-                                    }
+        if (mAuth.getCurrentUser()!=null)
+        {
+            finish();
+            startActivity(new Intent(getApplicationContext(),SecondActivity.class));
+        }
+        button.setOnClickListener(this);
+        button1.setOnClickListener(this);
+        checkBox.setOnClickListener(this);
+    }
+    private void userLogin()
+    {
+        String email=textEmail.getText().toString().trim();
+        String pass=textPass.getText().toString().trim();
 
-                                    // ...
-                                }
-                            });
+        if (TextUtils.isEmpty(email))
+        {
+            Toast.makeText(this, "enter the email id", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(pass))
+        {
+            Toast.makeText(this, "enter the pass", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(getApplicationContext(),SecondActivity.class));
                 }
-            }
-        });
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newIntent=new Intent(MainActivity.this,new_account.class);
-                startActivity(newIntent);
-            }
-        });
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent seIntent=new Intent(MainActivity.this,forgot_pass.class);
-                startActivity(seIntent);
             }
         });
     }
+
     @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
+    public void onClick(View v) {
+        if (v==button)
+        {
+            userLogin();
+        }
+        if (v==button1){
+            finish();
+            startActivity(new Intent(this,new_account.class));
+        }
+        if (v==checkBox)
+        {
+            finish();
+            startActivity(new Intent(this,forgot_pass.class));
+        }
     }
 }

@@ -143,7 +143,7 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="77dp"
         android:layout_marginBottom="54dp"
         android:text="Select subject code "
         android:textSize="24sp"
