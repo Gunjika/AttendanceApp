@@ -58,7 +58,8 @@ public class new_account extends AppCompatActivity {
             }
 
             private void register(String s1, String s2, String s3, String s4, String s5) {
-                mAuth.createUserWithEmailAndPassword(s1, s4)
+
+                mAuth.createUserWithEmailAndPassword(s3, s4)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

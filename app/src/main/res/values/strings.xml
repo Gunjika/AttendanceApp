@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Attendance App</string>
+    <array name="generes">
+        <item>MCA4001 Unix</item>
+        <item>MCA4002 DAA</item>
+        <item>MCA4003 CN</item>
+        <item>MCA4005 python</item>
+        <item>MCA4021 IRS</item>
+        <item>MCA4044 MAD</item>
+    </array>
 </resources>
