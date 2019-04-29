@@ -46,6 +46,5 @@ public class forgot_pass extends AppCompatActivity {
                 }
             }
         });
-
     }
 }

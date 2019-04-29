@@ -42,7 +42,6 @@ public class new_account extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         databaseReference= FirebaseDatabase.getInstance().getReference();
 
-
         USid=findViewById(R.id.editText3);
         Nam=findViewById(R.id.editText4);
         emailid=findViewById(R.id.editText5);
@@ -100,7 +99,6 @@ public class new_account extends AppCompatActivity {
                         else
                             Toast.makeText(new_account.this, task.getException().toString(), Toast.LENGTH_SHORT).show(); }
                 });
-
     }
     public void store(String s1, String s2, String s3, String s4)
     {

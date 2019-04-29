@@ -22,7 +22,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class SecondActivity extends AppCompatActivity {
-    TextView date,time1;
+    TextView date,time1,teachName,teachId;
     Button takeAttend,logout;
     Spinner spinner;
     private FirebaseAuth mAuth;
@@ -36,6 +36,8 @@ public class SecondActivity extends AppCompatActivity {
         time1=findViewById(R.id.textView9);
         takeAttend=findViewById(R.id.button12);
         date=findViewById(R.id.textView12);
+        teachName=findViewById(R.id.textView3);
+        teachId=findViewById(R.id.textView4);
         //logout=findViewById(R.id.button13);
         spinner=findViewById(R.id.spinner);
         mAuth=FirebaseAuth.getInstance();
@@ -48,7 +50,18 @@ public class SecondActivity extends AppCompatActivity {
         time1.setText((CharSequence) time);
         date.setText(currentdate);
 
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                teachName.setText(dataSnapshot.child("-LdcefAHrsDrg1mO8hkB").child("name").getValue().toString());
+                teachId.setText(dataSnapshot.child("-LdcefAHrsDrg1mO8hkB").child("id").getValue().toString());
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -82,6 +95,5 @@ public class SecondActivity extends AppCompatActivity {
     }
     private void addCourse(){
         String genre=spinner.getSelectedItem().toString();
-
     }
 }
