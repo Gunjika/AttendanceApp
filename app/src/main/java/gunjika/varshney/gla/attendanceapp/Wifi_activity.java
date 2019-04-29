@@ -2,6 +2,7 @@ package gunjika.varshney.gla.attendanceapp;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
 import android.net.wifi.p2p.WifiP2pManager;
@@ -10,8 +11,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Wifi_activity extends AppCompatActivity {
-    Button btnonoff,btnDiscover;
+    Button btnonoff,btnDiscover,logout;
     WifiManager wifiManager;
     WifiP2pManager mManager;
     WifiP2pManager.Channel mChannel;
@@ -22,11 +25,25 @@ public class Wifi_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wifi_activity);
+        btnonoff=findViewById(R.id.button10);
+        btnDiscover=findViewById(R.id.button2);
+        logout=findViewById(R.id.button4);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth fAuth = FirebaseAuth.getInstance();
+                fAuth.signOut();
+                Intent logoutIntent=new Intent(Wifi_activity.this,MainActivity.class);
+                startActivity(logoutIntent);
+            }
+        });
         initialwork();
         exqListener();
     }
 
     private void exqListener() {
+        btnonoff=findViewById(R.id.button10);
+        btnDiscover=findViewById(R.id.button2);
         btnonoff.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +64,8 @@ public class Wifi_activity extends AppCompatActivity {
                 mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
                     @Override
                     public void onSuccess() {
-
+                        Intent disIntent=new Intent(Wifi_activity.this,thirdActivity.class);
+                        startActivity(disIntent);
                     }
 
                     @Override

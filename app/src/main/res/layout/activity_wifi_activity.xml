@@ -9,14 +9,17 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="370dp"
-        android:layout_height="665dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="0dp"
+        android:layout_height="554dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
@@ -50,6 +53,13 @@
                 android:text="Discover" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="LogOut" />
 
     </LinearLayout>
 

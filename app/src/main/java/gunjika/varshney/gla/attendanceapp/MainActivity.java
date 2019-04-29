@@ -36,11 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         checkBox=findViewById(R.id.checkBox);
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
-        if (mAuth.getCurrentUser()!=null)
-        {
-            finish();
-            startActivity(new Intent(getApplicationContext(),SecondActivity.class));
-        }
+
         button.setOnClickListener(this);
         button1.setOnClickListener(this);
         checkBox.setOnClickListener(this);
@@ -64,8 +60,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    finish();
-                    startActivity(new Intent(getApplicationContext(),SecondActivity.class));
+                    Toast.makeText(MainActivity.this, "login successful", Toast.LENGTH_SHORT).show();
+                    Intent logIntent=new Intent(MainActivity.this,SecondActivity.class);
+                    startActivity(logIntent);
+                }
+                else 
+                {
+                    Toast.makeText(getApplicationContext(),task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -92,6 +93,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        /*if (mAuth.getCurrentUser()!=null)
+        {
+            finish();
+            startActivity(new Intent(getApplicationContext(),SecondActivity.class));
+        }*/
 
     }
 }

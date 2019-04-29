@@ -54,10 +54,11 @@
         <EditText
             android:id="@+id/editText5"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textPassword"
+            android:inputType="textPersonName"
+            android:textSize="18sp"
             android:textStyle="bold|italic" />
 
         <EditText
@@ -72,11 +73,11 @@
         <EditText
             android:id="@+id/editText10"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Confirm Password"
-            android:inputType="textPersonName"
-            android:textStyle="bold" />
+            android:inputType="textPassword"
+            android:textStyle="bold|italic" />
 
         <Button
             android:id="@+id/button9"
