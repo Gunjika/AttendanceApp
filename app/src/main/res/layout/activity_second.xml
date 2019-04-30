@@ -75,9 +75,9 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="91dp"
-                android:layout_height="85dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@color/cardview_light_background"
+                android:background="@color/colorPrimaryDark"
                 android:dropDownWidth="wrap_content"
                 android:entries="@array/generes"
                 android:minWidth="@dimen/cardview_compat_inset_shadow"

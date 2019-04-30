@@ -37,6 +37,13 @@ public class Wifi_activity extends AppCompatActivity {
                 startActivity(logoutIntent);
             }
         });
+        btnDiscover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent discIntent=new Intent(Wifi_activity.this,thirdActivity.class);
+                startActivity(discIntent);
+            }
+        });
         initialwork();
         exqListener();
     }
@@ -61,25 +68,39 @@ public class Wifi_activity extends AppCompatActivity {
         btnDiscover.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
-                    @Override
-                    public void onSuccess() {
+                {
                         Intent disIntent=new Intent(Wifi_activity.this,thirdActivity.class);
                         startActivity(disIntent);
-                    }
-
-                    @Override
-                    public void onFailure(int reason) {
-
-                    }
-                });
+                }
             }
         });
     }
 
-    private void initialwork() {
-        btnonoff=findViewById(R.id.button9);
-        btnDiscover=findViewById(R.id.button2);
+    private void initialwork
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            () {
+        //btnonoff=findViewById(R.id.button9);
+        //btnDiscover=findViewById(R.id.button2);
         wifiManager= (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         mManager= (WifiP2pManager) getSystemService(Context.WIFI_P2P_SERVICE);
         mChannel=mManager.initialize(this,getMainLooper(),null);

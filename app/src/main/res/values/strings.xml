@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Attendance App</string>
     <array name="generes">
+        <item>select subject</item>
         <item>MCA4001 Unix</item>
         <item>MCA4002 DAA</item>
         <item>MCA4003 CN</item>

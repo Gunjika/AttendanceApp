@@ -53,8 +53,8 @@ public class SecondActivity extends AppCompatActivity {
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                teachName.setText(dataSnapshot.child("-LdcefAHrsDrg1mO8hkB").child("name").getValue().toString());
-                teachId.setText(dataSnapshot.child("-LdcefAHrsDrg1mO8hkB").child("id").getValue().toString());
+                teachName.setText(dataSnapshot.child("-LdgR-ni6Wf4o6uvbfqc").child("name").getValue().toString());
+                teachId.setText(dataSnapshot.child("-LdgR-ni6Wf4o6uvbfqc").child("id").getValue().toString());
             }
 
             @Override
